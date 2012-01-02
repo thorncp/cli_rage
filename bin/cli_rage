@@ -1,3 +1,56 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
 
 require 'cli_rage'
+
+if ARGV.first == "install"
+  if File.exist? "~/.cli_rage"
+    # todo: handle this
+    puts "already installed"
+  else
+    puts "ATTENTION: This will modify your ~/.bash_profile file."
+    puts "The ~/.cli_rage file will be created, and your .bash_profile will be modified/created to reference the .cli_rage file."
+    print "Continue? (y/n) "
+
+    if STDIN.gets.chomp =~ /\Ay\z/i
+      puts "installing"
+      File.open(File.expand_path("~/.cli_rage"), "w") do |file|
+        file.puts "wtf() {"
+        file.puts "  echo 'bro, calm down'"
+        file.puts "}"
+      end
+
+      File.open(File.expand_path("~/.bash_profile"), "a") do |file|
+        file.puts
+        file.puts "source ~/.cli_rage"
+      end
+
+      puts "CLI Rage installation successful."
+      puts "Please close and reopen your prompt (or source ~/.bash_profile)"
+    else
+      puts "aborting"
+    end
+  end
+elsif ARGV.first == "uninstall"
+  puts "ATTENTION: This will uninstall cli_rage."
+  puts "The ~/.cli_rage file will be deleted, and your ~/.bash_profile will be modified to remove all lines referencing cli_rage."
+  print "Continue? (y/n) "
+
+  if STDIN.gets.chomp =~ /\Ay\z/i
+    lines = File.readlines(File.expand_path("~/.bash_profile"))
+    File.open(File.expand_path("~/.bash_profile"), "w") do |file|
+      lines.each do |line|
+        file.puts line unless line =~ /cli_rage/i
+      end
+    end
+    File.delete(File.expand_path("~/.cli_rage"))
+
+    puts "CLI Rage uninstallation successful."
+    puts "Please close and reopen your prompt (or source ~/.bash_profile)"
+  else
+    puts "aborting"
+  end
+else
+  puts "ಠ_ಠ"
+  exit 1
+end
