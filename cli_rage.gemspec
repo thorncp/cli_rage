@@ -4,8 +4,8 @@ require File.expand_path('../lib/cli_rage/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["thorncp"]
   gem.email         = ["thorncp@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Soothes command line induced rage.}
+  gem.summary       = %q{Soothes command line induced rage.}
   gem.homepage      = ""
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
