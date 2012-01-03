@@ -15,7 +15,7 @@ if ARGV.first == "install"
 
     if STDIN.gets.chomp =~ /\Ay\z/i
       puts "installing"
-      FileUtils.copy("lib/cli_rage/cli_rage.sh", File.expand_path("~/.cli_rage"))
+      FileUtils.copy(File.expand_path('../../lib/cli_rage/cli_rage.sh', __FILE__), File.expand_path("~/.cli_rage"))
 
       File.open(File.expand_path("~/.bash_profile"), "a") do |file|
         file.puts
