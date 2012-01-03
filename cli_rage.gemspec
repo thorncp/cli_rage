@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["thorncp@gmail.com"]
   gem.description   = %q{Soothes command line induced rage.}
   gem.summary       = %q{Soothes command line induced rage.}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/thorncp/cli_rage"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
