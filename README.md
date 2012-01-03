@@ -21,6 +21,10 @@ Apparently, for me, long travel has a tendency to produce silly libraries (see [
 
 It should work in any bash environment, but I have basically zero bash knowledge, so there's that. It seems to work fine for me on OS X 10.7 in Terminal and iTerm. This is a one-off library that I will probably never touch again.
 
+# I've had my fun, how do I nuke it?
+
+    cli_rage uninstall
+
 # License
 
 Do whatever, I don't care.
