@@ -9,6 +9,12 @@ With RubyGems of course.
     gem install cli_rage
     cli_rage install
 
+## Some example commands
+
+    wtf
+    ffuu
+    huh
+
 # Does it totally jack up my terminal?
 
 Probably. It creates a bunch of aliases for common commands I type when raging. If you already have commands of the same name, it'll clobber them. Sorry.
